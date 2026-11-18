@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Outfit", "Noto Sans Arabic", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Arabic", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Optical compensation for light typography on dark surfaces */
+  .dark body {
+    letter-spacing: 0.008em;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Before/after range overlay input reset for seamless pointer + keyboard control */
+.ba-range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.ba-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.ba-range-input::-moz-range-thumb {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

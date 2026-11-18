@@ -1,0 +1,6 @@
+{
+  "name": "Advance Car Studio",
+  "description": "Luxury car detailing, multi-stage paint correction, paint protection film (PPF), and 9H ceramic coating studio in Islamabad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
